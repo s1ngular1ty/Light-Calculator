@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,12 +21,18 @@ namespace Light_Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<string> buttonSequences = new List<string>();
+        public static List<string> buttonSequences = new List<string>();        
 
         public MainWindow()
         {
+            string version = "v" + (Assembly.GetExecutingAssembly().GetName().Version).ToString();
+            string appName = "Light Calculator";
+            string titleText = appName + "     " + version;
+            
             InitializeComponent();
+            this.Title = titleText;                     
             btnRun.IsEnabled = false;            
+           
         }
 
 
@@ -60,7 +67,7 @@ namespace Light_Calculator
             buttonDescriptions.Add(5, "G: Pier");
             buttonDescriptions.Add(6, "D: WaterFall");
             buttonDescriptions.Add(7, "E: Rock");
-
+            
             // Clear out results text box
             if (!string.IsNullOrEmpty(tbSequence.Text))
                 tbSequence.Text = "";

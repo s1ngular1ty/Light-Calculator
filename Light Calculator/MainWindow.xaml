@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Light_Calculator"
         mc:Ignorable="d"
-        Title="Light Calculator" Height="502" Width="494">
+        Height="502" Width="494">
+    
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="txtBoxDescription">
             <Setter Property="Width" Value="125" />
@@ -21,7 +22,7 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
-
+        
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal">
@@ -89,6 +90,9 @@
             <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
                 <TextBox Text="Lights Controlled by One Button" IsReadOnly="True" BorderThickness="0"/>
                 <TextBox Name="tbLightsWithOneButton" Margin="20,0,0,0" Width="Auto" MinWidth="150" IsReadOnly="True" FontSize="14"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,20,0,0">
+                <TextBox Name="tbVersion" Width="Auto" BorderThickness="0"/>
             </StackPanel>
         </StackPanel>
 
