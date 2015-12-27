@@ -25,7 +25,7 @@ namespace Light_Calculator
         public MainWindow()
         {
             InitializeComponent();
-            btnRun.IsEnabled = false;
+            btnRun.IsEnabled = false;            
         }
 
 
@@ -44,7 +44,7 @@ namespace Light_Calculator
             Dictionary<int, bool> lights = new Dictionary<int, bool>();
             List<List<int>> buttonsList = new List<List<int>>();
             Dictionary<int, string> buttonDescriptions = new Dictionary<int, string>();
-
+            
             buttonsList.Add(button1);
             buttonsList.Add(button2);
             buttonsList.Add(button3);
@@ -61,6 +61,10 @@ namespace Light_Calculator
             buttonDescriptions.Add(6, "D: WaterFall");
             buttonDescriptions.Add(7, "E: Rock");
 
+            // Clear out results text box
+            if (!string.IsNullOrEmpty(tbSequence.Text))
+                tbSequence.Text = "";
+            
             // Determine how many buttons control each light
             buttonsPerLight = getButtonsPerLight(buttonsList);
 
@@ -75,7 +79,7 @@ namespace Light_Calculator
             // Turn on default config lights
             foreach (var light in defaultConfig)
                 lights[light] = !lights[light];
-
+                    
             GetCombination(new List<int> { 1, 2, 3, 4, 5, 6, 7 });
 
             bool foundSequence = false;
@@ -114,9 +118,12 @@ namespace Light_Calculator
                     if(str.Length >= 3)
                         str.Length = str.Length - 2;
 
-                    tbSequence.Text = str.ToString();
-                    foundSequence = true;
-                    break;
+                    if (string.IsNullOrEmpty(tbSequence.Text))
+                        tbSequence.Text = str.ToString();
+                    else
+                        tbSequence.Text = tbSequence.Text + "\n" + str.ToString();
+                                        
+                    foundSequence = true;                 
                 }
             }
 
@@ -139,6 +146,9 @@ namespace Light_Calculator
 
         static void GetCombination(List<int> list)
         {
+            // Clear button sequences to prevent duplication on multiple runs
+            buttonSequences.Clear();
+
             string temp = "";
             double count = Math.Pow(2, list.Count);
             for (int i = 1; i <= count - 1; i++)
@@ -224,6 +234,17 @@ namespace Light_Calculator
             tbPier.Text = "9,12,14";
             tbWaterFall.Text = "5,13,18";
             tbRock.Text = "5,6,7,11,13,17,18,20";
+
+            // 2nd test case from commenter on reddit.  Not sure of data quality
+
+            //tbDefault.Text = "1,9,14";
+            //tbTemple.Text = "2,5,6,8,16,20";
+            //tbTree.Text = "2,3,4,6,10,20";
+            //tbPagota.Text = "2,6,17,18,19,20";
+            //tbFurnace.Text = "1,3,4,9,12,14,15";
+            //tbPier.Text = "5,7,8,11,13,16";
+            //tbWaterFall.Text = "7,10,11,13";
+            //tbRock.Text = "1,9,14,17,18,19";
         }
 
         static bool verifyAllData(List<string> lightData)

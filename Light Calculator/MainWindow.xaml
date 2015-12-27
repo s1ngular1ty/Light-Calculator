@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Light_Calculator"
         mc:Ignorable="d"
-        Title="Light Calculator" Height="487" Width="449">
+        Title="Light Calculator" Height="502" Width="494">
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="txtBoxDescription">
             <Setter Property="Width" Value="125" />
@@ -20,74 +20,109 @@
             <Setter Property="Margin" Value="0,5,0,5" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-
         </Style>
+
     </Window.Resources>
 
-    <StackPanel Orientation="Vertical" Margin="10,0,0,0" Background="White">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Margin="10,0,0,0" Background="White">
 
-        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBox Text="Default Lights" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbDefault" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="1"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox Text="Default Lights" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbDefault" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="1"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBox Text="Buttons" Width="125" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14"/>
-            <TextBox Text="Lights Activated By Button" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox Text="Buttons" Width="125" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14"/>
+                <TextBox Text="Lights Activated By Button" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="H: Temple" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbTemple" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="2"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="H: Temple" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbTemple" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="2"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="A: Tree" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbTree" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="3"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="A: Tree" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbTree" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="3"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="B: Pagota" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbPagota" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="3"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="B: Pagota" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbPagota" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="3"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="C: Furnace" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbFurnace" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="4"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="C: Furnace" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbFurnace" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="4"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="G: Pier" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbPier" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="5"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="G: Pier" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbPier" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="5"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="D: WaterFall" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbWaterFall" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="6"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="D: WaterFall" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbWaterFall" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="6"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="E: Rock" Style="{StaticResource txtBoxDescription}"/>
-            <TextBox Name="tbRock" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="7"/>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="E: Rock" Style="{StaticResource txtBoxDescription}"/>
+                <TextBox Name="tbRock" Width="250" Style="{StaticResource txtBoxLights}" TextChanged="TextBox_TextChanged" TabIndex="7"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-            <Button Name="btnRun" Content="Run" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Name="btnRun" Content="Run" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                     FontSize="14" Click="Button_Click"/>
-            <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                <TextBox Text="Button Sequence" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-                <TextBox Name="tbSequence" MinWidth="200" Width="Auto" FontSize="14" IsReadOnly="True"/>
+                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                    <TextBox Text="Possible Button Sequences" IsReadOnly="True" BorderThickness="0" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                    <TextBox Name="tbSequence" MinWidth="200" Width="Auto" FontSize="14" IsReadOnly="True"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Name="btnClear" Content="Clear" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                    FontSize="14" Click="btnClear_Click"/>
+                <Button Name="btnPopulateTest" Content="Populate Test Data" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                    Margin="20,0,0,0" FontSize="14" Click="btnPopulateTest_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                <TextBox Text="Lights Controlled by One Button" IsReadOnly="True" BorderThickness="0"/>
+                <TextBox Name="tbLightsWithOneButton" Margin="20,0,0,0" Width="Auto" MinWidth="150" IsReadOnly="True" FontSize="14"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-            <Button Name="btnClear" Content="Clear" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                    FontSize="14" Click="btnClear_Click"/>
-            <Button Name="btnPopulateTest" Content="Populate Test Data" Width="130" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                    Margin="20,0,0,0" FontSize="14" Click="btnPopulateTest_Click" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
-            <TextBox Text="Lights Controlled by One Button" IsReadOnly="True" BorderThickness="0"/>
-            <TextBox Name="tbLightsWithOneButton" Margin="20,0,0,0" Width="Auto" MinWidth="150" IsReadOnly="True" FontSize="14"/>
-        </StackPanel>
+
+        <!--<ListView Name="lvLights" Width="Auto" Margin="20,15,20,0" MinHeight="395" Height="Auto" VerticalAlignment="Top">
+            <ListView.Resources>
+                <Style TargetType="TextBlock" x:Key="tbStyle">
+                    <Setter Property="FontSize" Value="10" />
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>                       
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>                
+                <GridView>
+                    <GridViewColumn Header="Light" Width="50" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Key}" Style="{StaticResource tbStyle}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="On ?" Width="50" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Value}" Style="{StaticResource tbStyle}"/>                              
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>-->
+
     </StackPanel>
 </Window>
